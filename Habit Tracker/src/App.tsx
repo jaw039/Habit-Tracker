@@ -2,6 +2,7 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/ui/app-sidebar"
 import './App.css'
+import FocusTimer from "./components/FocusTimer"
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
       <AppSidebar />
       <main>
         <SidebarTrigger />
+        <FocusTimer />
         {/* {children} */}
       </main>
     </SidebarProvider>
