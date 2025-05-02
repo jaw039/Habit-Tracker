@@ -13,6 +13,16 @@ function FocusTimer() {
         return `${formattedMinutes}:${formattedSeconds}`;
     };
 
+    const handleAddTime = () => {
+        const AddMinutes = minutes + 5; // Add the minutes + 5 mins
+        setMinutes(AddMinutes);  // updates the minutes state in React
+    }
+
+    const handleMinusTime = () => {
+        const MinusMinutes = minutes - 5;
+        setMinutes(MinusMinutes);
+    }
+
     return (
         <div className="flex flex-col items-center justify-center">
             {/* Title */}
@@ -22,13 +32,13 @@ function FocusTimer() {
             <div className="text-sm text-gray mb-4">Set your daily focus goal.</div>
 
             <div className="flex items-center mb-4">
-                <Button variant="outline" size="icon">
+                <Button onClick = {handleMinusTime} variant="outline" size="icon">
                     -
                 </Button>
 
                 <div className="text-4xl font-bold mx-4">{formatTime()}</div>
 
-                <Button variant="outline" size="icon">
+                <Button onClick= {handleAddTime} variant="outline" size="icon">
                     +
                 </Button>
             </div>
