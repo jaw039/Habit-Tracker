@@ -15,12 +15,18 @@ function FocusTimer() {
 
     const handleAddTime = () => {
         const AddMinutes = minutes + 5; // Add the minutes + 5 mins
-        setMinutes(AddMinutes);  // updates the minutes state in React
+        if (AddMinutes <= 120) { // Is the result is less than 120
+            setMinutes(AddMinutes); // If it is update the state
+        }
+        // Do nothing once it hits the limit (else)
     }
 
     const handleMinusTime = () => {
-        const MinusMinutes = minutes - 5;
-        setMinutes(MinusMinutes);
+        const MinusMinutes = minutes - 5; // Calculate potential new value
+        if (MinusMinutes >= 5) { // Check if subtracting 5 stays at or above the 5-minute minimum
+            setMinutes(MinusMinutes); // If it is subtract by 5 and update the state
+        }
+        
     }
 
     return (
@@ -31,6 +37,7 @@ function FocusTimer() {
             {/* Description */}
             <div className="text-sm text-gray mb-4">Set your daily focus goal.</div>
 
+            {/* ADD/MINUS Button */}
             <div className="flex items-center mb-4">
                 <Button onClick = {handleMinusTime} variant="outline" size="icon">
                     -
