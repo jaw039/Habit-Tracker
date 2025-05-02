@@ -39,6 +39,7 @@ function FocusTimer() {
 
             {/* ADD/MINUS Button */}
             <div className="flex items-center mb-4">
+                
                 <Button onClick = {handleMinusTime} variant="outline" size="icon">
                     -
                 </Button>
