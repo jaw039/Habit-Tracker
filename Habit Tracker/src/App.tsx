@@ -10,10 +10,15 @@ function App() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main>
-        <SidebarTrigger />
+      <main className="relative min-h-screen">
+        <div className="absolute left-4 top-4">
+          <SidebarTrigger />
+        </div>
+      
+
+      <div className="p-4 pt-16">
         <FocusTimer />
-        {/* {children} */}
+      </div>
       </main>
     </SidebarProvider>
   )
